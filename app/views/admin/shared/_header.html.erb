@@ -1,0 +1,10 @@
+<header>
+	<%= link_to("BAUKIS", :admin_root, class: 'logo-mark') %>
+	<%= content_tag(:span, flash.notice, class: 'notice') %>
+	<%= content_tag(:span, flash.alert, class: 'alert') %>
+	<%= if current_administrator
+		link_to 'ログアウト', {controller: :sessions, action: :destroy}, method: :delete
+	else
+		link_to 'ログイン', {controller: :sessions, action: :new}
+	end %>
+</header>

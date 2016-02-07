@@ -1,0 +1,17 @@
+<% @title = '新規登録' %>
+<h1><%= @title %></h1>
+
+<div class="row">
+  <%= form_for(@staff_member, url: {action: :update}, html: {class: 'col s12'}) do |f| %>
+    <%= render 'form', f: f %>
+    <div class='row'>
+      <div class="col s12">
+        <div class="center-align">
+          <%= f.submit %>
+          <%= link_to 'キャンセル', :admin_staff_members %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+

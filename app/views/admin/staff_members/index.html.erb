@@ -1,0 +1,42 @@
+<% @title = '職員管理' %>
+<h1><%= @title %></h1>
+<div class="table-wrapper">
+  <div>
+    <%= link_to("新規登録", :new_admin_staff_member, class: 'waves-effect waves-light btn-large') %>
+  </div>
+  <table class="centered highlight">
+    <thead>
+      <tr>
+          <th>氏名</th>
+          <th>フリガナ</th>
+          <th>メールアドレス</th>
+          <th>開始日</th>
+          <th>終了日</th>
+          <th>停止フラグ</th>
+          <th>アクション</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @staff_members.each do |sm| %>
+      <tr>
+        <td><%= "#{sm.family_name} #{sm.given_name}" %></td>
+        <td><%= "#{sm.family_name_kana} #{sm.given_name_kana}" %></td>
+        <td><%= sm.email %></td>
+        <td><%= sm.start_date.strftime('%Y/%m/%d') %></td>
+        <td><%= sm.end_date.try(:strftime, '%Y/%m/%d') %></td>
+        <td><%= sm.suspended %></td>
+        <td>
+          <%= link_to("編集", [:edit, :admin, sm],
+                      class: 'waves-effect waves-light btn') %>
+          <%= link_to("Events", [:admin, sm, :staff_events],
+                      class: 'waves-effect waves-light btn') %>
+          <%= link_to("削除", [:admin, sm], method: :delete,
+                      data: {confirm: '本当に削除しますか？'},
+                      class: 'waves-effect waves-light btn') %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+

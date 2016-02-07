@@ -1,0 +1,54 @@
+/* line 6, C:/gits/baukis/app/assets/stylesheets/admin/container.css.scss */
+div#wrapper div#container h1 {
+  margin: 0;
+  padding: 9px 6px;
+  font-size: 16px;
+  font-weight: normal;
+  background-color: #4b002a;
+  color: #eeeeee;
+}
+/* line 4, C:/gits/baukis/app/assets/stylesheets/admin/layout.css.scss */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* line 10, C:/gits/baukis/app/assets/stylesheets/admin/layout.css.scss */
+div#wrapper {
+  position: relative;
+  box-sizing: boyder-box;
+  min-height: 100%;
+  margin: 0 auto;
+  padding-bottom: 48px;
+  background-color: #cccccc;
+}
+
+/* line 19, C:/gits/baukis/app/assets/stylesheets/admin/layout.css.scss */
+header {
+  padding: 6px;
+  background-color: #650038;
+  color: #fafafa;
+}
+/* line 23, C:/gits/baukis/app/assets/stylesheets/admin/layout.css.scss */
+header span.logo-mark {
+  font-weight: bold;
+}
+
+/* line 28, C:/gits/baukis/app/assets/stylesheets/admin/layout.css.scss */
+footer {
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
+  background-color: #666666;
+  color: #fafafa;
+}
+/* line 34, C:/gits/baukis/app/assets/stylesheets/admin/layout.css.scss */
+footer p {
+  text-align: center;
+  padding: 6px;
+  margin: 0;
+}
+/*
+
+ */

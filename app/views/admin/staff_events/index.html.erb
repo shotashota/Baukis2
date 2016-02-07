@@ -1,0 +1,42 @@
+<%
+	if @staff_member
+		full_name = "#{@staff_member.family_name}#{@staff_member.given_name}"
+		@title = "#{full_name}さんのログイン・ログアウト履歴"
+	else
+		@title = '職員のログイン・ログアウト履歴'
+	end
+ %>
+
+<h1><%= @title %></h1>
+<div class="table-wrapper">
+	<div>
+		<%= link_to("職員一覧", :admin_staff_members,
+					class: 'waves-effect waves-light btn-large') %>
+	</div>
+	<table class="centered highlight">
+		<thead>
+			<% unless @staff_member %>
+			<th>
+				氏名
+			</th>
+			<% end %>
+			<th>種別</th>
+			<th>日時</th>
+		</thead>
+		<tbody>
+			<%= render partial: 'event', collection: @events %>
+			<% if @events.blank? %>
+				<tr>
+					<td colspan="2">
+						履歴がありません
+					</td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<%= paginate @events %>
+	<div class="links">
+		<%= link_to("職員一覧", :admin_staff_members,
+					class: 'waves-effect waves-light btn-large') %>
+	</div>
+</div>
